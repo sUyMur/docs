@@ -10,10 +10,10 @@ The most exciting features are:
 * Create recurring transactions to manage your money
 * Rule based transaction handling with the ability to create your own rules
 * Import data from external systems
-  * FinTS
   * bunq
+  * Revolut
   * Spectre (offering thousands of connected banks)
-  * CSV files 
+  * CSV files (using [csv-importer](https://github.com/firefly-iii/csv-importer))
   * YNAB
 
 Then the things that make you go "yeah OK, makes sense".
@@ -37,7 +37,7 @@ And the things you would hope for but not expect:
 
 * 2 factor authentication for extra security 🔒
 * Supports any currency you want, including crypto currencies such as ₿itcoin and Ξthereum
-* There is a Docker image, a Sandstorm.io grain and an Heroku script.
+* There is a Docker image and an Heroku script.
 * Lots of help text in case you don't get it
 
 And to organise everything:
