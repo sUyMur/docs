@@ -105,6 +105,19 @@ You may see an error like this one: `Could not reliably determine the server's f
 
 You can now visit Firefly III at [http://localhost](http://localhost) or [http://docker-ip:port](http://docker-ip:port) if it is running on a custom port.
 
+### Optional: recurrent transactions with cron
+
+To use recurrent bookings you have to use a cronjob, as they need to be triggered.
+
+As a quick way to solve this, with the use of docker-compose it is possible to add this service definition: 
+```
+cron:
+    container_name:  firefly-iii-cron
+    image: alpine
+    command: sh -c "echo \"0 3 * * * wget https://<FIREFLYURL>/cron/run/<TOKEN>\" | crontab - && crond -f -L /dev/stdout"
+```
+_Originally posted by @bestlibre in https://github.com/firefly-iii/firefly-iii/issues/2057#issuecomment-465545667_
+
 ## Docker Hub with automatic updates via run/pull
 
 This will let you manually start the two docker containers you need to run Firefly III. One is for the database, the second is for the app itself.
